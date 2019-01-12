@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_12_165051) do
+ActiveRecord::Schema.define(version: 2019_01_12_180014) do
 
   create_table "reservations", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2019_01_12_165051) do
   create_table "rooms", force: :cascade do |t|
     t.integer "rate"
     t.integer "minibar"
+    t.boolean "available", default: true
   end
 
 end
