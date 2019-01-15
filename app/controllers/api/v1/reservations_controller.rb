@@ -1,5 +1,4 @@
 class Api::V1::ReservationsController < ApplicationController
-
   protect_from_forgery with: :null_session
 
   def index
@@ -10,7 +9,7 @@ class Api::V1::ReservationsController < ApplicationController
   def create
     reservation = Reservation.new(reservation_params)
     if reservation.save
-       reservation.room.update(available: false)
+       reservation.room.update(available: true)
       render json: reservation
     else
       render json: { errors: reservation.errors }, status: 422
