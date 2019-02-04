@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+Reservation.destroy_all
+
+5.times do
+  reservation = Reservation.create(name:Faker::DragonBall.character, last_name:Faker::Artist.name , loyalty_member: true, room_id:rand(1..4))
+end

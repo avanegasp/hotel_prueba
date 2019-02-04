@@ -3,7 +3,8 @@ class Api::V1::ReservationsController < ApplicationController
 
   def index
     rooms = Room.where(available: false)
-    render json:rooms
+    reservations = Reservation.all
+    render json:reservations
   end
 
   def create
